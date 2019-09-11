@@ -32,7 +32,7 @@
 1301 rem scelta di chi inizia il gioco
 1302 rem stabilendo la conf iniziale
 1310 let k$="no": input "inizio io"; k$
-1320 if k$="S" or k$="SI" then go to 1410
+1320 if k$="s" or k$="si" or k$="S" or k$="SI" then go to 1410
 1330 print "bene, disponi tu le file"
 1340 for i=0 to 3
 1350 print "fila n.";i+1;: input w(i+1)
@@ -69,7 +69,7 @@
 1630 let q=int(rnd*w(f))+1: if q>5 then goto 1630
 1640 print "mmh... ";
 1700 rem dichiara mossa ed esegue
-1710 print "levo "; q; " da"; f: gosub 4000
+1710 print "levo "; q; " da "; f: gosub 4000
 1720 let w(f)=w(f)-q: gosub 7000
 1730 gosub 4000
 1740 gosub 6000
@@ -79,10 +79,10 @@
 1800 rem
 1801 rem umano muove
 1810 let f=0: let q=0: print "tocca a te, ";
-1820 print "da quale fila";: input f
+1820 print "da quale fila?": input f
 1830 if f<1 or f>4 then print "no!": goto 1820
 1840 if w(f)=0 then print "no!": goto 1820
-1850 print "quanti";: input q
+1850 print "quanti?": input q
 1860 if q<1 or q>w(f) then print "no!": goto 1850
 1870 let w(f)=w(f)-q: gosub 7000
 1880 gosub 6000
@@ -94,7 +94,7 @@
 1950 rem
 1951 rem esci o rigioca
 1960 input "vuoi rigiocare"; k$
-1970 if k$="s" or k$="si" goto 1300
+1970 if k$="s" or k$="si" or k$="S" or k$="SI" then goto 1300
 1980 print "alla prossima, ciao!"
 1990 end
 1991 rem fine programma ===============
@@ -121,7 +121,7 @@
 3100 return
 4000 rem
 4001 rem attesa
-4010 for t=1 to 1500: next t
+4010 for t=1 to 200: next t
 4020 return
 5000 rem
 5001 rem genera z da w
