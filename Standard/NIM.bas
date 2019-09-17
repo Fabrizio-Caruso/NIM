@@ -9,8 +9,9 @@
 1008 rem
 1100 rem strutture dati
 1101 rem
+1105 dim k$(3)
 1110 rem stato, val dec correnti
-1111 dim w(4)
+1111 dim w(5)
 1120 rem val dec ipotesi di mossa
 1121 dim m(4)
 1130 rem val bin per valutaz mossa
@@ -35,7 +36,7 @@
 1320 if k$="s" or k$="si" or k$="S" or k$="SI" then go to 1410
 1330 print "bene, disponi tu le file"
 1340 for i=0 to 3
-1350 print "fila n.";i+1;: input w(i+1)
+1350 print "fila n.";i+1;: input ww: let w(i+1) = ww
 1360 if w(i+1)<1 or w(i+1)>7 then print "no!": goto 1350
 1370 next i
 1380 gosub 5000
