@@ -97,7 +97,7 @@
 1960 input "vuoi rigiocare"; k$
 1970 if k$="s" or k$="si" or k$="S" or k$="SI" then goto 1300
 1980 print "alla prossima, ciao!"
-1990 end
+1990 goto 9999
 1991 rem fine programma ===============
 1992 rem
 1993 rem
@@ -215,3 +215,4 @@
 9082 data 0,0,1,1,1,1,0
 9083 data 0,0,0,1,1,1,1
 9084 data 4,4,4,4
+9999 rem end

@@ -9,8 +9,9 @@
 1008 rem
 1100 rem strutture dati
 1101 rem
+1105 dim k$(3)
 1110 rem stato, val dec correnti
-1111 dim w(4)
+1111 dim w(5)
 1120 rem val dec ipotesi di mossa
 1121 dim m(4)
 1130 rem val bin per valutaz mossa
@@ -35,7 +36,7 @@
 1320 if k$="s" or k$="si" or k$="S" or k$="SI" then go to 1410
 1330 print "bene, disponi tu le file"
 1340 for i=0 to 3
-1350 print "fila n.";i+1;: input w(i+1)
+1350 print "fila n.";i+1;: input ww: let w(i+1) = ww
 1360 if w(i+1)<1 or w(i+1)>7 then print "no!": goto 1350
 1370 next i
 1380 gosub 5000
@@ -96,7 +97,7 @@
 1960 input "vuoi rigiocare"; k$
 1970 if k$="s" or k$="si" or k$="S" or k$="SI" then goto 1300
 1980 print "alla prossima, ciao!"
-1990 end
+1990 goto 9999
 1991 rem fine programma ===============
 1992 rem
 1993 rem
@@ -117,7 +118,7 @@
 3060 for k=0 to 2
 3070 let x(k+1)=b(1,k+1)+b(2,k+1)+b(3,k+1)+b(4,k+1)
 3080 next k
-3090 let r=(x(3)and1)+(x(2)and1)+(x(1)and1)
+3090 let r=(x(3) and 1)+(x(2) and 1)+(x(1) and 1)
 3100 return
 4000 rem
 4001 rem attesa
@@ -161,9 +162,9 @@
 8001 rem seleziona disp. iniziale
 8010 restore
 8020 read dn
-8030 let di = int(rnd*dn)
-8040 if di=0 then goto 8060
-8050 for s=1 to di*32: read tmp: next s
+8030 let dd = int(rnd*dn)
+8040 if dd=0 then goto 8060
+8050 for s=1 to dd*32: read tmp: next s
 8060 for i=0 to 3
 8070 for j=0 to 6
 8080 read z(i+1,j+1):
@@ -214,3 +215,4 @@
 9082 data 0,0,1,1,1,1,0
 9083 data 0,0,0,1,1,1,1
 9084 data 4,4,4,4
+9999 rem end
