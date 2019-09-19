@@ -111,14 +111,17 @@
 3000 rem
 3001 rem valutazione mossa
 3010 for k=0 to 3
-3020 let b(k+1,1) = m(k+1) and 1
-3030 let b(k+1,2) =(m(k+1) and 2)/2
-3040 let b(k+1,3) =(m(k+1) and 4)/4
+3020 let b(k+1,1)=1:if m(k+1)/2 = int(m(k+1)/2) then let b(k+1,1)=0
+3030 let b(k+1,2)=1:if int(m(k+1)/2)/2 = int(m(k+1)/4) then let b(k+1,2)=0
+3040 let b(k+1,3)=1:if int(m(k+1)/4)/2 = int(m(k+1)/8) then let b(k+1,3)=0
 3050 next k
 3060 for k=0 to 2
 3070 let x(k+1)=b(1,k+1)+b(2,k+1)+b(3,k+1)+b(4,k+1)
 3080 next k
-3090 let r=(x(3) and 1)+(x(2) and 1)+(x(1) and 1)
+3090 let x3 = 1: if x(3)/2 = int(x(3)/2) then let x3 = 0
+3092 let x2 = 1: if x(2)/2 = int(x(2)/2) then let x2 = 0
+3094 let x1 = 1: if x(1)/2 = int(x(1)/2) then let x1 = 0
+3096 let r= x1 + x2 + x3
 3100 return
 4000 rem
 4001 rem attesa

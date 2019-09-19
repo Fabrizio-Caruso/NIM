@@ -1,0 +1,13 @@
+1000 input m
+
+3000 let bb=1:if m/2 = int(m/2) then let bb=0
+3010 let b1 = bb
+
+3100 let bb=1:if int(m/2)/2 = int(m/4) then let bb=0
+3110 let b2 = bb
+
+3200 let bb=1:if int(m/4)/2 = int(m/8) then let bb=0
+3900 let b3 = bb
+
+4000 print b3,b2,b1
+5000 print:print: goto 1000
