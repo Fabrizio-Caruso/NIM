@@ -32,7 +32,7 @@
 1300 rem
 1301 rem scelta di chi inizia il gioco
 1302 rem stabilendo la conf iniziale
-1310 print "inizio io?";: input k$
+1310 print "inizio io";: input k$
 1320 if (k$="s") or (k$="si") or (k$="S") or (k$="SI") then go to 1410
 1330 print "bene, disponi tu le file"
 1340 for i=0 to 3
@@ -170,10 +170,10 @@
 8050 for s=1 to dd*32: read tmp: next s
 8060 for i=0 to 3
 8070 for j=0 to 6
-8080 read z(i+1,j+1):
+8080 read zz: let z(i+1,j+1) = zz
 8090 next j
 8100 next i
-8110 for i=0 to 3: read w(i+1): next i
+8110 for i=0 to 3: read ww: let w(i+1) = ww:next i
 8120 return
 9000 rem
 9001 rem dati disposizioni iniziali ===
